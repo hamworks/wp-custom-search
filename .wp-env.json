@@ -1,0 +1,16 @@
+{
+	"core": "WordPress/WordPress",
+	"mappings": {
+		"wp-content/mu-plugins/wp-custom-search": "."
+	},
+	"port": 23456,
+	"config": {
+		"WP_ENVIRONMENT_TYPE": "local",
+		"WP_DEBUG": true
+	},
+	"env": {
+		"tests": {
+			"port": 23457
+		}
+	}
+}

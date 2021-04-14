@@ -1,0 +1,38 @@
+{
+	"name": "@hamworks/wp-custom-search",
+	"license": "GPL-2.0+",
+	"scripts": {
+		"wp-env": "wp-env",
+		"test-unit-php": "wp-env run phpunit 'phpunit -c /var/www/html/wp-content/mu-plugins/wp-custom-search/phpunit.xml.dist --verbose'",
+		"lint-php": "./vendor/bin/phpcs --standard=./.phpcs.xml.dist"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/team-hamworks/wp-custom-search.git"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"@wordpress/env": "^4.0.1",
+		"lint-staged": "^10.5.3"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"packages/*/package.json": [
+			"wp-scripts lint-pkg-json"
+		],
+		"{*.css,*.scss}": [
+			"npm run lint-style"
+		],
+		"*.js": [
+			"npm run format-js",
+			"npm run lint-js"
+		],
+		"*.php": [
+			"npm run lint-php"
+		]
+	}
+}
