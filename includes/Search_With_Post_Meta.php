@@ -5,6 +5,11 @@ namespace HAMWORKS\WP\Custom_Search;
 
 use WP_Query;
 
+/**
+ * Class Search_With_Post_Meta
+ *
+ * @package HAMWORKS\WP\Custom_Search
+ */
 class Search_With_Post_Meta {
 
 	/**

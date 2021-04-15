@@ -21,10 +21,11 @@ class Search_With_Term_Test extends \WP_UnitTestCase {
 	 */
 	public function setUp(): void {
 		parent::setUp();
+		$cat = $this->factory()->category->create( array( 'name' => 'opqrstuvwxyz' ) );
 		$this->factory()->post->create_many(
 			25,
 			array(
-				'meta_input' => array( 'foo' => 'abc' ),
+				'post_category' => array( $cat ),
 			)
 		);
 		$this->q = new \WP_Query();
@@ -47,12 +48,13 @@ class Search_With_Term_Test extends \WP_UnitTestCase {
 		return $this->q->query( $args );
 	}
 
+
 	/**
-	 * Test sample.
-	 *
-	 * @test
+	 * Test.
 	 */
-	public function test_true() {
-		$this->assertTrue( true );
+	public function test_search() {
+		new Search_With_Term( array( 'foo' ) );
+		$posts = $this->get_search_results( 'opqrstuvwxyz' );
+		$this->assertEquals( 25, count( $posts ) );
 	}
 }
