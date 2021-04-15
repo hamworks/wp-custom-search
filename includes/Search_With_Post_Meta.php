@@ -44,9 +44,9 @@ class Search_With_Post_Meta {
 	 * Remove filters.
 	 */
 	public function __destruct() {
-		remove_filter( 'posts_join', array( $this, 'posts_join' ), 10 );
-		remove_filter( 'posts_search', array( $this, 'posts_search' ), 10 );
-		remove_filter( 'posts_groupby', array( $this, 'posts_groupby' ), 10 );
+		remove_filter( 'posts_join', array( $this, 'posts_join' ) );
+		remove_filter( 'posts_search', array( $this, 'posts_search' ) );
+		remove_filter( 'posts_groupby', array( $this, 'posts_groupby' ) );
 	}
 
 	/**
