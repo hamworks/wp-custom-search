@@ -26,15 +26,15 @@ class Search_With_Post_Meta {
 	 *
 	 * @var string[]
 	 */
-	public $meta_keys_to_include = array();
+	public $meta_keys = array();
 
 	/**
 	 * Constructor.
 	 *
-	 * @param string[] $meta_keys_to_include meta key for search.
+	 * @param string[] $meta_keys meta key for search.
 	 */
-	public function __construct( $meta_keys_to_include = array() ) {
-		$this->meta_keys_to_include = $meta_keys_to_include;
+	public function __construct( $meta_keys = array() ) {
+		$this->meta_keys = $meta_keys;
 		add_filter( 'posts_join', array( $this, 'posts_join' ), 10, 2 );
 		add_filter( 'posts_search', array( $this, 'posts_search' ), 10, 2 );
 		add_filter( 'posts_groupby', array( $this, 'posts_groupby' ), 10, 2 );
@@ -87,8 +87,8 @@ class Search_With_Post_Meta {
 		}
 
 		$meta_where = '';
-		if ( is_array( $this->meta_keys_to_include ) ) {
-			foreach ( $this->meta_keys_to_include as $meta_key ) {
+		if ( is_array( $this->meta_keys ) ) {
+			foreach ( $this->meta_keys as $meta_key ) {
 				$meta_where .= " OR ({$this->post_meta_alias}.meta_key = '{$meta_key}' AND {$this->post_meta_alias}.meta_value LIKE $1)";
 			}
 		}
