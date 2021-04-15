@@ -31,6 +31,8 @@ class Search_With_Post_Meta_Test extends \WP_UnitTestCase {
 				'meta_input' => array( 'foo' => 'abcdefghijk' ),
 			)
 		);
+
+		$this->factory()->post->create_many( 25 );
 		$this->q = new \WP_Query();
 	}
 
