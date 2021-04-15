@@ -1,4 +1,9 @@
 <?php
+/**
+ * Test for Search_With_Term
+ *
+ * @package HAMWORKS\WP\Custom_Search\Test
+ */
 
 namespace HAMWORKS\WP\Custom_Search\Test;
 

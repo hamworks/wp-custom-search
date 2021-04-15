@@ -1,4 +1,9 @@
 <?php
+/**
+ * Test for Search_With_Post_Meta
+ *
+ * @package HAMWORKS\WP\Custom_Search\Test
+ */
 
 namespace HAMWORKS\WP\Custom_Search\Test;
 
