@@ -22,7 +22,8 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"HAMWORKS\\WP\\Custom_Search\\" : "includes/"
+			"HAMWORKS\\WP\\Custom_Search\\" : "includes/",
+			"HAMWORKS\\WP\\Custom_Search\\Test\\" : "tests/"
 		}
 	},
 	"scripts": {

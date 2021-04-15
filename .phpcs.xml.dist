@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <ruleset name="WP library">
-	<file>./src</file>
+	<file>./includes</file>
+	<file>./tests</file>
 	<arg value="ps"/>
 	<arg name="extensions" value="php"/>
 	<config name="minimum_supported_wp_version" value="5.3"/>
