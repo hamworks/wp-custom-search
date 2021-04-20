@@ -19,14 +19,14 @@ class Search_With_Term {
 	 *
 	 * @var string[]
 	 */
-	public $taxonomies = array();
+	public $taxonomies;
 
 	/**
 	 * Constructor.
 	 *
 	 * @param string[] $taxonomies taxonomies for search.
 	 */
-	public function __construct( $taxonomies = array() ) {
+	public function __construct( array $taxonomies ) {
 		$this->taxonomies = $taxonomies;
 		add_filter( 'posts_search', array( $this, 'posts_search' ), 10, 2 );
 		add_filter( 'posts_groupby', array( $this, 'posts_groupby' ), 10, 2 );

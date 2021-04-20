@@ -26,14 +26,14 @@ class Search_With_Post_Meta {
 	 *
 	 * @var string[]
 	 */
-	public $meta_keys = array();
+	public $meta_keys;
 
 	/**
 	 * Constructor.
 	 *
 	 * @param string[] $meta_keys meta key for search.
 	 */
-	public function __construct( $meta_keys = array() ) {
+	public function __construct( array $meta_keys ) {
 		$this->meta_keys = $meta_keys;
 		add_filter( 'posts_join', array( $this, 'posts_join' ), 10, 2 );
 		add_filter( 'posts_search', array( $this, 'posts_search' ), 10, 2 );
